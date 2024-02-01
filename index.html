@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i Socials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            margin: 20px;
+        }
+        #post-form {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        #posts {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Social Media</h1>
+    </header>
+
+    <main>
+        <div id="post-form">
+            <h2>Create a Post</h2>
+            <form id="create-post-form">
+                <textarea id="post-content" rows="4" placeholder="What's on your mind?"></textarea>
+                <br>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+
+        <div id="posts">
+            <h2>Recent Posts</h2>
+            <div class="post">
+                <p>Sample Post Content</p>
+            </div>
+            <!-- More posts will be dynamically added here -->
+        </div>
+    </main>
+
+    <script>
+        // JavaScript code for handling post submissions goes here
+        document.addEventListener('DOMContentLoaded', function () {
+            // Assuming you have an array of post content
+            const postsData = [
+                "Sample Post Content 1",
+                "Sample Post Content 2",
+                // Add more post content as needed
+            ];
+
+            const postsContainer = document.getElementById('posts');
+
+            // Loop through the postsData array and create post elements
+            postsData.forEach(function (content) {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+                postElement.innerHTML = `<p>${content}</p>`;
+                postsContainer.appendChild(postElement);
+            });
+        });
+    </script>
+
+</body>
+</html>
